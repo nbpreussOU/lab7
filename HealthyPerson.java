@@ -10,8 +10,6 @@ public class HealthyPerson extends Person
     public HealthyPerson(String name,int age, String reason)
     {
         super(name, age);
-        this.name = name;
-        this.age = age;
         this.reason = reason;
     }
     
@@ -26,7 +24,7 @@ public class HealthyPerson extends Person
     
     public int compareToImpl(Person o)
     {
-        if(o.getClass().getSimpleName().equals("HealthyPerson"))
+        if(!o.getClass().getSimpleName().equals(this.getClass().getSimpleName()))
         {
             return 0;
             //check to see if this returns a positive or negative number
@@ -46,6 +44,6 @@ public class HealthyPerson extends Person
     @Override
     public String toString()
     {
-        return String.format("%s", this.getName()) + " In for " + String.format("%s",  this.getReason());
+        return String.format("%s In for ", super.toString(), this.getReason());
     }
 }
