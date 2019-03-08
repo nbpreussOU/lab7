@@ -13,10 +13,6 @@ public class HealthyPerson extends Person
         this.reason = reason;
     }
     
-    public String getName()
-    {
-        return name;
-    }
     public String getReason()
     {
         return reason;
@@ -44,6 +40,6 @@ public class HealthyPerson extends Person
     @Override
     public String toString()
     {
-        return String.format("%s In for ", super.toString(), this.getReason());
+        return String.format("%s In for %s", super.toString(), this.getReason());
     }
 }

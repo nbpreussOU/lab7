@@ -21,7 +21,7 @@ public class Driver
      * Main method for the Hospital Comparison system. Takes repeated inputs from the user to interact with
      * the hospitals. Three hospitals are created for treating animals and people each. When a person or animal
      * is added, it is added to all three associated hospitals (stack, queue, and priority queue). This allows
-     * the user to compare how the hospitals determine the order of treating the patients.
+     * the user to compare how the hospitals determine the order of treating the patients.1
      *
      * @param args command-line arguments [not used]
      */
@@ -49,7 +49,7 @@ public class Driver
     	personHospitals.add(personQueue);
     	personHospitals.add(personPQueue);
     	String[] phNames = {"PStack", "PQueue", "PPQueue"};
-
+    	
         // Set up the user input loop:
         boolean done = false;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

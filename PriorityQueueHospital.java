@@ -1,21 +1,19 @@
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.PriorityQueue;
 
 public class PriorityQueueHospital<PatientType> extends Hospital<PatientType> implements Comparator<PatientType>
 {
-    private Queue<PatientType> patients;
+    private PriorityQueue<PatientType> patients;
      
     public PriorityQueueHospital()
     {
-        patients = new LinkedList<PatientType>();
+        patients = new PriorityQueue<PatientType>();
     }
     
     @Override
     public void addPatient(PatientType patient)
     {
-         //TODO figure out where in the severity list this person belongs, and add them there
+        patients.add(patient);
     }
 
     @Override
