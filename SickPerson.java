@@ -1,8 +1,6 @@
 
 public class SickPerson extends Person
 {
-    private int age;
-    private String name;
     private int severity;
     
     //implements the constructor given in the javadoc

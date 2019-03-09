@@ -1,9 +1,6 @@
 
 public class HealthyPerson extends Person
 {
-
-    private int age;
-    private String name;
     private String reason;
     
     //implements the constructor given in the javadoc
@@ -26,10 +23,10 @@ public class HealthyPerson extends Person
             //check to see if this returns a positive or negative number
         }else if(this.getName().compareToIgnoreCase(o.getName()) > 0)
         {
-            return -1;
+            return 1;
         }else if(this.getName().compareToIgnoreCase(o.getName()) < 0)
         {
-            return 1;
+            return -1;
         }else
            //the names are the same
         {

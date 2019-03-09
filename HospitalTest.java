@@ -21,14 +21,26 @@ public class HospitalTest
         SickPerson per1 = new SickPerson("Alfred", 31,  5);
         HealthyPerson per2 = new HealthyPerson("Fred", 31,  "Eye Exam");
         SickPerson per3 = new SickPerson("Alfred", 27,  2);
+        
         PriorityQueueHospital<Person> PrioQueue = new PriorityQueueHospital<>();
+        StackHospital<Person> Stack = new StackHospital<>();
+        QueueHospital<Person> Queue = new QueueHospital<>();
         
         PrioQueue.addPatient(per);
         PrioQueue.addPatient(per1);
         PrioQueue.addPatient(per2);
         PrioQueue.addPatient(per3);
+        Stack.addPatient(per);
+        Stack.addPatient(per1);
+        Stack.addPatient(per2);
+        Queue.addPatient(per);
+        Queue.addPatient(per1);
+        Queue.addPatient(per2);
+        Queue.addPatient(per3);
         
-        Assert.assertEquals("A PriorityQueueHospital type hospital with 4 patients.", per1, PrioQueue.toString());
+        Assert.assertEquals("Name of hospital incorrect", "A PriorityQueueHospital-type hospital with 4 patients.", PrioQueue.toString());
+        Assert.assertEquals("Name of hospital incorrect", "A StackHospital-type hospital with 3 patients.", Stack.toString());
+        Assert.assertEquals("Name of hospital incorrect", "A QueueHospital-type hospital with 4 patients.", Queue.toString());
     }
     
     /**
@@ -67,8 +79,8 @@ public class HospitalTest
         HealthyPerson per3 = new HealthyPerson("Alfred", 27,  "Yearly Visit");
         
         Assert.assertEquals("HealthyPerson compare class incorrect.", 0, per.compareToImpl(per2));
-        Assert.assertEquals("HealthyPerson compare differnet name incorect", -1, per.compareToImpl(per1));
-        Assert.assertEquals("HealthyPerson compare different name 2 incorect", 1, per1.compareToImpl(per));
+        Assert.assertEquals("HealthyPerson compare differnet name incorect", 1, per.compareToImpl(per1));
+        Assert.assertEquals("HealthyPerson compare different name 2 incorect", -1, per1.compareToImpl(per));
         Assert.assertEquals("HealthyPerson same name incorect", 0, per3.compareToImpl(per1));
     }
     
