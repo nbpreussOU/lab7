@@ -11,7 +11,27 @@ import org.junit.Test;
  */
 public class HospitalTest
 {
-	/**
+    /**
+     * Test the hospital toString method
+     */
+    @Test
+    public void hospitalToStringTest()
+    {
+        SickPerson per = new SickPerson("Kyle", 19, 4);
+        SickPerson per1 = new SickPerson("Alfred", 31,  5);
+        HealthyPerson per2 = new HealthyPerson("Fred", 31,  "Eye Exam");
+        SickPerson per3 = new SickPerson("Alfred", 27,  2);
+        PriorityQueueHospital<Person> PrioQueue = new PriorityQueueHospital<>();
+        
+        PrioQueue.addPatient(per);
+        PrioQueue.addPatient(per1);
+        PrioQueue.addPatient(per2);
+        PrioQueue.addPatient(per3);
+        
+        Assert.assertEquals("A PriorityQueueHospital type hospital with 4 patients.", per1, PrioQueue.toString());
+    }
+    
+    /**
 	 * Test the healthy person consrtuctor, and getReason method
 	 */
 	@Test
@@ -151,10 +171,10 @@ public class HospitalTest
         aQueue.addPatient(per2);
         aQueue.addPatient(per3);
         
-        Assert.assertEquals("StackHospital nextPatient incorrect", per, aQueue.nextPatient());
-        Assert.assertEquals("StackHospital numPatient incorrect", 4, aQueue.numPatients());
-        Assert.assertEquals("StackHospital HospitalType incorrect", "QueueHospital", aQueue.hospitalType());
-        Assert.assertEquals("StackHospital allPatientInfo incorrect", "Kyle, a 19-year old. Severity level 4Alfred, a 31-year old. Severity level 5Fred, a 31-year old. In for Eye ExamAlfred, a 27-year old. Severity level 2", aQueue.allPatientInfo());
+        Assert.assertEquals("QueueHospital nextPatient incorrect", per, aQueue.nextPatient());
+        Assert.assertEquals("QueueHospital numPatient incorrect", 4, aQueue.numPatients());
+        Assert.assertEquals("QueueHospital HospitalType incorrect", "QueueHospital", aQueue.hospitalType());
+        Assert.assertEquals("QueueHospital allPatientInfo incorrect", "Kyle, a 19-year old. Severity level 4Alfred, a 31-year old. Severity level 5Fred, a 31-year old. In for Eye ExamAlfred, a 27-year old. Severity level 2", aQueue.allPatientInfo());
     }
     
     /**
@@ -175,8 +195,8 @@ public class HospitalTest
         aQueue.addPatient(per2);
         aQueue.addPatient(per3);
         
-        Assert.assertEquals("StackHospital treatnextPatient incorrect", per, aQueue.treatNextPatient());
-        Assert.assertEquals("StackHospital treatnextPatient incorrect", per1, aQueue.nextPatient());
+        Assert.assertEquals("QueueHospital treatnextPatient incorrect", per, aQueue.treatNextPatient());
+        Assert.assertEquals("QueueHospital treatnextPatient incorrect", per1, aQueue.nextPatient());
     }
     
     /**
@@ -196,10 +216,10 @@ public class HospitalTest
         PrioQueue.addPatient(per2);
         PrioQueue.addPatient(per3);
         
-        Assert.assertEquals("StackHospital nextPatient incorrect", per1, PrioQueue.nextPatient());
-        Assert.assertEquals("StackHospital numPatient incorrect", 4, PrioQueue.numPatients());
-        Assert.assertEquals("StackHospital HospitalType incorrect", "PriorityQueueHospital", PrioQueue.hospitalType());
-        Assert.assertEquals("StackHospital allPatientInfo incorrect", "Alfred, a 31-year old. Severity level 5Kyle, a 19-year old. Severity level 4Fred, a 31-year old. In for Eye ExamAlfred, a 27-year old. Severity level 2", PrioQueue.allPatientInfo());
+        Assert.assertEquals("PriorityQueueHospital nextPatient incorrect", per1, PrioQueue.nextPatient());
+        Assert.assertEquals("PriorityQueueHospital numPatient incorrect", 4, PrioQueue.numPatients());
+        Assert.assertEquals("PriorityQueueHospital HospitalType incorrect", "PriorityQueueHospital", PrioQueue.hospitalType());
+        Assert.assertEquals("PriorityQueueHospital allPatientInfo incorrect", "Alfred, a 31-year old. Severity level 5Kyle, a 19-year old. Severity level 4Fred, a 31-year old. In for Eye ExamAlfred, a 27-year old. Severity level 2", PrioQueue.allPatientInfo());
     }
     
     /**
@@ -220,7 +240,7 @@ public class HospitalTest
         PrioQueue.addPatient(per2);
         PrioQueue.addPatient(per3);
         
-        Assert.assertEquals("StackHospital treatnextPatient incorrect", per1, PrioQueue.treatNextPatient());
-        Assert.assertEquals("StackHospital treatnextPatient incorrect", per, PrioQueue.nextPatient());
+        Assert.assertEquals("PriorityQueueHospital treatnextPatient incorrect", per1, PrioQueue.treatNextPatient());
+        Assert.assertEquals("PriorityQueueHospital treatnextPatient incorrect", per, PrioQueue.nextPatient());
     }
 }

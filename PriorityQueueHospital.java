@@ -55,10 +55,10 @@ public class PriorityQueueHospital<PatientType> extends Hospital<PatientType> im
     public int compare(PatientType patient1, PatientType patient2)
     {
         if(((SickPerson) patient1).getSeverity() > ((SickPerson) patient2).getSeverity()) {
-            return 1;
+            return -1;
         }else if(((SickPerson) patient1).getSeverity() < ((SickPerson) patient2).getSeverity())
         {
-            return -1;
+            return 1;
         }else
         {
             return 0;
